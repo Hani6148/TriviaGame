@@ -9,7 +9,7 @@ var question=[
     choice4:"1789",
     answer:"1789",
     gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
-    giflose:""
+    giflose:"https://media1.giphy.com/media/mVsZhzKf4HaZa/giphy.gif"
 
     },
     {
@@ -20,7 +20,7 @@ var question=[
         choice4:"Hogar",
         answer:"Evrest",
         gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
-        giflose:""
+        giflose:"https://media1.giphy.com/media/mVsZhzKf4HaZa/giphy.gif"
     
         },
         {
@@ -31,7 +31,7 @@ var question=[
             choice4:"Germany",
             answer:"Italy",
             gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
-            giflose:""
+            giflose:"https://media1.giphy.com/media/mVsZhzKf4HaZa/giphy.gif"
         
             },
             {
@@ -42,13 +42,14 @@ var question=[
                 choice4:"satur",
                 answer:"Jupiter",
                 gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
-                giflose:""
+                giflose:"https://media1.giphy.com/media/mVsZhzKf4HaZa/giphy.gif"
             
                 },
 ];
 console.log(question.length);
 trivia();
 function trivia(){
+    time=30;
     $("#content").empty();
     ran = Math.floor(Math.random() * question.length);
     timeRemaining=$("<H1>");
@@ -80,30 +81,45 @@ function trivia(){
     }
 
     $(".choice").on("click",function(){
+        firstChoice.remove();
+        secondChoice.remove();
+        thirdChoice.remove();
+        fourthChoice.remove();
         if($(this).html()== question[ran].answer)
         {    clearInterval(intervalId);
             win();
         }
-        // else{
-        //     clearInterval(intervalId);
-        //     lose();
-        // }
+        else{
+            clearInterval(intervalId);
+            lose();
+        }
     });
     
     
 }
 
 function win(){
-    firstChoice.remove();
-    secondChoice.remove();
-    thirdChoice.remove();
-    fourthChoice.remove();
+   
 
     bravo=$("<H1>");
     bravoImg=$("<img>");
     bravo.text("Good Answer");
     bravoImg.attr("src",question[ran].gifwin);
     $("#content").append(bravo,bravoImg);
+
+    setTimeout(trivia,3000);
+}
+
+function lose(){
+   
+
+    toobad=$("<H1>");
+    toobadImg=$("<img>");
+    correct=$("<h1>");
+    toobad.text("Wrong Answer");
+    correct.text("The correct answer is: "+question[ran].answer);
+    toobadImg.attr("src",question[ran].giflose);
+    $("#content").append(toobad,correct,toobadImg);
 
     setTimeout(trivia,3000);
 }
