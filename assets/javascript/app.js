@@ -8,7 +8,7 @@ var question=[
     choice3:"1779",
     choice4:"1789",
     answer:"1789",
-    gifwin:"",
+    gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
     giflose:""
 
     },
@@ -18,8 +18,8 @@ var question=[
         choice2:"Evian",
         choice3:"Fuji",
         choice4:"Hogar",
-        answer:"evrest",
-        gifwin:"",
+        answer:"Evrest",
+        gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
         giflose:""
     
         },
@@ -30,7 +30,7 @@ var question=[
             choice3:"Italy",
             choice4:"Germany",
             answer:"Italy",
-            gifwin:"",
+            gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
             giflose:""
         
             },
@@ -41,7 +41,7 @@ var question=[
                 choice3:"Jupiter",
                 choice4:"satur",
                 answer:"Jupiter",
-                gifwin:"",
+                gifwin:"https://media.giphy.com/media/rypyVNU547qrC/giphy.gif",
                 giflose:""
             
                 },
@@ -49,6 +49,7 @@ var question=[
 console.log(question.length);
 trivia();
 function trivia(){
+    $("#content").empty();
     ran = Math.floor(Math.random() * question.length);
     timeRemaining=$("<H1>");
     questionDisplay=$("<H1>");
@@ -83,10 +84,10 @@ function trivia(){
         {    clearInterval(intervalId);
             win();
         }
-        else{
-            clearInterval(intervalId);
-            lose();
-        }
+        // else{
+        //     clearInterval(intervalId);
+        //     lose();
+        // }
     });
     
     
@@ -100,4 +101,9 @@ function win(){
 
     bravo=$("<H1>");
     bravoImg=$("<img>");
+    bravo.text("Good Answer");
+    bravoImg.attr("src",question[ran].gifwin);
+    $("#content").append(bravo,bravoImg);
+
+    setTimeout(trivia,3000);
 }
