@@ -1,5 +1,7 @@
 var ran=0;
-time=30;
+var time=30;
+var correctAnswer=0;
+var wrongAnswer=0;
 var question=[
     {
     declaration:"when did the french revolution take place ?",
@@ -51,6 +53,10 @@ trivia();
 function trivia(){
     time=30;
     $("#content").empty();
+    if(question.length==0){
+        total();
+        return;
+    }
     ran = Math.floor(Math.random() * question.length);
     timeRemaining=$("<H1>");
     questionDisplay=$("<H1>");
@@ -75,12 +81,17 @@ function trivia(){
         timeRemaining.html(time);
         if(time==0){
             clearInterval(intervalId);
+            firstChoice.remove();
+            secondChoice.remove();
+            thirdChoice.remove();
+            fourthChoice.remove();
             timeOut();
         }
        
     }
 
     $(".choice").on("click",function(){
+        
         firstChoice.remove();
         secondChoice.remove();
         thirdChoice.remove();
@@ -99,20 +110,24 @@ function trivia(){
 }
 
 function win(){
-   
-
+    
+    correctAnswer++;
+    console.log(correctAnswer);
+    
     bravo=$("<H1>");
     bravoImg=$("<img>");
     bravo.text("Good Answer");
     bravoImg.attr("src",question[ran].gifwin);
     $("#content").append(bravo,bravoImg);
+    question.splice(    ran, 1);
+    console.log(question);
 
     setTimeout(trivia,3000);
 }
 
 function lose(){
    
-
+    wrongAnswer++;
     toobad=$("<H1>");
     toobadImg=$("<img>");
     correct=$("<h1>");
@@ -120,6 +135,30 @@ function lose(){
     correct.text("The correct answer is: "+question[ran].answer);
     toobadImg.attr("src",question[ran].giflose);
     $("#content").append(toobad,correct,toobadImg);
+    question.splice(ran, 1);
 
     setTimeout(trivia,3000);
+}
+
+function timeOut(){
+wrongAnswer++;
+toobad=$("<H1>");
+toobadImg=$("<img>");
+correct=$("<h1>");
+toobad.text("Time's Out");
+correct.text("The correct answer is: "+question[ran].answer);
+toobadImg.attr("src",question[ran].giflose);
+$("#content").append(toobad,correct,toobadImg);
+question.splice(ran, 1);
+setTimeout(trivia,3000);
+}
+
+function total(){
+var score=$("<h1>");
+var correct=$("<h1>");
+var wrong=$("<h1>");
+score.text("Your score is: ");
+correct.text("Correct Answers: "+correctAnswer);
+wrong.text("Wrong Answers: "+wrongAnswer);
+$("#content").append(score,correct,wrong);
 }
