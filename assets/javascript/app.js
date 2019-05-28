@@ -160,14 +160,21 @@ $.ajax({
     }
     
     function total(){
+        button=$("<button>");
+        button.text("Restart The Game");
+        button.attr("class","button")
+        $("#content").append(title,button);
+        button.on("click",main)
     var score=$("<h1>");
     var correct=$("<h1>");
     var wrong=$("<h1>");
     score.text("Your score is: ");
     correct.text("Correct Answers: "+correctAnswer);
     wrong.text("Wrong Answers: "+wrongAnswer);
-    $("#content").append(score,correct,wrong);
-    setTimeout(display,3000);
+    $("#content").append(score,correct,wrong,button);
+    
+    $("#content").append(title,button);
+    button.on("click",main);
     }
 
   });
