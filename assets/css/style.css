@@ -11,7 +11,16 @@ opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+    animation-duration: 2s;
+    color: #c0056c !important;
+
+background: #ffffff;
+
+border: 2px solid antiquewhite !important;
+border-radius: 6px;
+padding: 5px;
+
+opacity: 0.8;
 }
 
 .question{
@@ -27,6 +36,9 @@ opacity: 1;
 .choice:hover{
     color: palevioletred;
     cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid black !important;
+    transition: all 0.2s ease 0s;
 }
 .time{
     text-align: center;
@@ -36,7 +48,7 @@ opacity: 1;
 		opacity: 0;
 	}
 	100% {
-		opacity: 1;
+		opacity: 0.8;
 	}
 }
 
@@ -123,7 +135,7 @@ opacity: 0.8;
 .button:hover {
     color: #ec9dc9 !important;
     border-radius: 50px;
-    border-color: #494949 !important;
-    transition: all 0.3s ease 0s;
+    
+    transition: all 0.5s ease 0s;
     cursor: pointer;
     }
