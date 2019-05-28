@@ -6,7 +6,7 @@ body{
 .choice{
     
     width: fit-content;
-color: antiquewhite;
+color: lightgoldenrodyellow;
 opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
@@ -39,3 +39,91 @@ opacity: 1;
 		opacity: 1;
 	}
 }
+
+#content{
+   width: 1450px;
+   margin: auto;
+
+}
+.list{
+    display: none;
+}
+.title {
+    color: mistyrose;
+    
+    width:350px;
+    height:250px;
+    
+    font-family: 'Oswald', sans-serif;
+    font-size:5em;
+    line-height:1;
+    margin:0;
+    padding:0;
+    
+    -webkit-transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg); 
+    transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg);  
+    
+    position:absolute;
+    left:50%;
+    top:50px;
+    margin-left:-180px;
+    text-align: center;
+    -webkit-animation: anim 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count:infinite;
+    
+    animation: anim 3s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite;
+  }
+  
+  @-webkit-keyframes anim {
+      0%{text-shadow:-6px 4px 0px red;}
+      10% {text-shadow:4px -6px 0px green;}
+      20% {text-shadow:-9px 4px 0px blue;}
+      30% {text-shadow:4px -6px 0px yellow;}
+      40% {text-shadow:-8px 4px 0px orange;}
+      50% {text-shadow:4px 5px 0px purple;}
+      60% {text-shadow:-6px 4px 0px brown;}
+      70% {text-shadow:4px 7px 0px pink;}
+      80% {text-shadow:-9px -4px 0px lime;}
+      90% {text-shadow:4px -6px 0px cyan;}
+      100% {text-shadow:-9px 4px 0px teal;}
+  } 
+  
+  @keyframes anim {
+    0%{text-shadow:-6px 4px 0px red;}
+    10% {text-shadow:4px -6px 0px green;}
+    20% {text-shadow:-9px 4px 0px blue;}
+    30% {text-shadow:4px -6px 0px yellow;}
+    40% {text-shadow:-8px 4px 0px orange;}
+    50% {text-shadow:4px 5px 0px purple;}
+    60% {text-shadow:-6px 4px 0px brown;}
+    70% {text-shadow:4px 7px 0px pink;}
+    80% {text-shadow:-9px -4px 0px lime;}
+    90% {text-shadow:4px -6px 0px cyan;}
+    100% {text-shadow:-9px 4px 0px teal;}
+} 
+
+.button{
+    position: absolute;
+    left:35%;
+    top:65%;
+    color: #ec9dc9 !important;
+text-transform: uppercase;
+background: #ffffff;
+padding: 20px;
+border: 4px solid black !important;
+border-radius: 6px;
+display: inline-block;
+font-size: -webkit-xxx-large;
+opacity: 0.8;
+
+}
+.button:hover {
+    color: #ec9dc9 !important;
+    border-radius: 50px;
+    border-color: #494949 !important;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    }

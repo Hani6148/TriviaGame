@@ -1,4 +1,18 @@
-main()
+display();
+function display(){
+    title=$("<h1>");
+    title.html("Nerdy Trivia");
+    title.attr("class","title")
+    button=$("<button>");
+    button.text("Start The Game");
+    button.attr("class","button")
+    $("#content").append(title,button);
+    button.on("click",main)
+    
+    
+
+}
+
 function main(){
 var qnumb=0;
 var time=30;
@@ -56,7 +70,7 @@ $.ajax({
         thirdChoice=$("<H1>");
         fourthChoice=$("<H1>");
         timeRemaining.html(time);
-        myquestionDisplay.html(myquestion[qnumb].question);
+        myquestionDisplay.html(myquestion[qnumb].question+"<br><br><br>");
         firstChoice.html(myquestion[qnumb].choices[0]);
         firstChoice.attr("class","choice 1");
         secondChoice.html(myquestion[qnumb].choices[1]);
@@ -153,7 +167,7 @@ $.ajax({
     correct.text("Correct Answers: "+correctAnswer);
     wrong.text("Wrong Answers: "+wrongAnswer);
     $("#content").append(score,correct,wrong);
-    setTimeout(main,3000);
+    setTimeout(display,3000);
     }
 
   });
