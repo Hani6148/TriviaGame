@@ -13,13 +13,23 @@ $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-     
+      
+$.ajax({
+      
+    url: "https://api.tenor.com/v1/search?q=win&key=7028GSBQOFUX&limit=10&anon_id=3a76e56901d740da9e59ffb22b988242",
+    method: "GET"
+  }).then(function(pics) {
 
+     
+    gifs=pics.results;
+    console.log(gifs);
     myquestion=response.results;
     for(i=0;i<10;i++){
         rand = Math.floor(Math.random() * 3);  
         myquestion[i].incorrect_answers.splice(rand,0,myquestion[i].correct_answer);
         myquestion[i].choices=myquestion[i].incorrect_answers;
+        myquestion[i].gifwin=gifs[i].url;
+        
         delete myquestion[i].incorrect_answers;
         
 
@@ -27,17 +37,20 @@ $.ajax({
         
     }
     console.log(myquestion);
+
     trivia();
     function trivia(){
         time=30;
         $("#content").empty();
-        if(qnumb==9){
+        if(qnumb==10){
             total();
             return;
         }
-        
         timeRemaining=$("<H1>");
+        timeRemaining.attr("class","time");
         myquestionDisplay=$("<H1>");
+        myquestionDisplay.attr("class","question");
+        
         firstChoice=$("<H1>");
         secondChoice=$("<H1>");
         thirdChoice=$("<H1>");
@@ -45,13 +58,13 @@ $.ajax({
         timeRemaining.html(time);
         myquestionDisplay.html(myquestion[qnumb].question);
         firstChoice.html(myquestion[qnumb].choices[0]);
-        firstChoice.attr("class","choice");
+        firstChoice.attr("class","choice 1");
         secondChoice.html(myquestion[qnumb].choices[1]);
-        secondChoice.attr("class","choice");
+        secondChoice.attr("class","choice 2");
         thirdChoice.html(myquestion[qnumb].choices[2]);
-        thirdChoice.attr("class","choice");
+        thirdChoice.attr("class","choice 3");
         fourthChoice.html(myquestion[qnumb].choices[3]);
-        fourthChoice.attr("class","choice");
+        fourthChoice.attr("class","choice 4");
         $("#content").append(timeRemaining,myquestionDisplay,firstChoice,secondChoice,thirdChoice,fourthChoice);
          intervalId=setInterval(timer, 1000);
           function  timer () {
@@ -142,6 +155,7 @@ $.ajax({
     $("#content").append(score,correct,wrong);
     setTimeout(main,3000);
     }
-    
+
   });
-}
+  
+});}

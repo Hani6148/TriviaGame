@@ -1,0 +1,41 @@
+body{
+    background-image: url(../images/nerd.jpg);
+    background-size: cover;
+}
+
+.choice{
+    
+    width: fit-content;
+color: antiquewhite;
+opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+.question{
+    text-align: center;
+    color: antiquewhite;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+
+}
+.choice:hover{
+    color: palevioletred;
+    cursor: pointer;
+}
+.time{
+    text-align: center;
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
