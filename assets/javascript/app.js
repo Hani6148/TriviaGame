@@ -122,6 +122,7 @@ $.ajax({
         bravo=$("<H1>");
         bravoImg=$("<img>");
         bravo.text("Good Answer");
+        bravo.attr("class","center");
         bravoImg.attr("src",myquestion[qnumb].gifwin);
         $("#content").append(bravo,bravoImg);
        
@@ -140,6 +141,8 @@ $.ajax({
         toobad.text("Wrong Answer");
         correct.text("The correct answer is: "+myquestion[qnumb].correct_answer);
         toobadImg.attr("src",myquestion[qnumb].giflose);
+        correct.attr("class","center");
+        toobad.attr("class","center");
         $("#content").append(toobad,correct,toobadImg);
         qnumb++;
     
@@ -153,6 +156,8 @@ $.ajax({
     correct=$("<h1>");
     toobad.text("Time's Out");
     correct.text("The correct answer is: "+myquestion[qnumb].correct_answer);
+    toobad.attr("class","center");
+    correct.attr("class","center");
     toobadImg.attr("src",myquestion[qnumb].giflose);
     $("#content").append(toobad,correct,toobadImg);
     qnumb++;
