@@ -161,11 +161,19 @@ left:6%;
 top:218px;
 margin-left:-180px;
 text-align: center;
--webkit-animation: anim 3s;
+-webkit-animation: animation 2s;
 -webkit-animation-timing-function: linear;
 -webkit-animation-iteration-count:infinite;
 
-animation: anim 10s;
+animation: animation 5s;
 animation-timing-function: linear;
 animation-iteration-count:infinite;
 }
+
+@keyframes animation {
+    0%{text-shadow:-6px 4px 0px pink;}
+    25% {text-shadow:4px -6px 0px rgb(186, 235, 232);}
+    50% {text-shadow:-9px 4px 0px rgb(150, 140, 142);}
+    75% {text-shadow:-9px 4px 0px rgb(214, 211, 159);}
+    100% {text-shadow:-9px 4px 0px rgb(185, 142, 190);}
+} 

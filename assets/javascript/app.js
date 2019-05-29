@@ -20,6 +20,9 @@ var correctAnswer=0;
 var wrongAnswer=0;
 var queryURL = "https://opentdb.com/api.php?amount=10&type=multiple";
 var myquestion = new Array();
+var intervalId;
+
+
 
 
 $.ajax({
@@ -96,7 +99,7 @@ $.ajax({
         }
     
         $(".choice").on("click",function(){
-            
+             rightAnswer=$(this).text();
             firstChoice.remove();
             secondChoice.remove();
             thirdChoice.remove();
@@ -137,9 +140,10 @@ $.ajax({
         wrongAnswer++;
         toobad=$("<H1>");
         toobadImg=$("<img>");
-        correct=$("<h1>");
+        correct=$("<H1>");
         toobad.text("Wrong Answer");
-        correct.text("The correct answer is: "+myquestion[qnumb].correct_answer);
+        
+        correct.html("The correct answer is: "+myquestion[qnumb].correct_answer);
         toobadImg.attr("src",myquestion[qnumb].giflose);
         correct.attr("class","center");
         toobad.attr("class","center");
@@ -165,11 +169,12 @@ $.ajax({
     }
     
     function total(){
+        clearInterval(intervalId);
         button=$("<button>");
         button.text("Restart The Game");
         button.attr("class","button")
         $("#content").append(title,button);
-        button.on("click",main)
+        
     var score=$("<h1>");
     var correct=$("<h1>");
     var wrong=$("<h1>");
