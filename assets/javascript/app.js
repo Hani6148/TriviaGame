@@ -176,6 +176,9 @@ $.ajax({
     score.text("Your score is: ");
     correct.text("Correct Answers: "+correctAnswer);
     wrong.text("Wrong Answers: "+wrongAnswer);
+    score.attr("class","total");
+    correct.attr("class","total");
+    wrong.attr("class","total");
     $("#content").append(score,correct,wrong,button);
     
     $("#content").append(title,button);

@@ -122,7 +122,7 @@ left: 273px;
 
 .button{
     position: absolute;
-    left:35%;
+    left:33%;
     top:65%;
     color: #ec9dc9 !important;
 text-transform: uppercase;
@@ -153,4 +153,19 @@ border-radius: 6px;
 width: fit-content;
 margin: auto;
 opacity: 0.8;
+}
+.total{
+    color: transparent;
+position: relative;;
+left:6%;
+top:218px;
+margin-left:-180px;
+text-align: center;
+-webkit-animation: anim 3s;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count:infinite;
+
+animation: anim 10s;
+animation-timing-function: linear;
+animation-iteration-count:infinite;
 }
