@@ -31,21 +31,17 @@ $.ajax({
     method: "GET"
   }).then(function(response) {
       
-$.ajax({
-      
-    url: "https://api.tenor.com/v1/search?q=win&key=7028GSBQOFUX&limit=10&anon_id=3a76e56901d740da9e59ffb22b988242",
-    method: "GET"
-  }).then(function(pics) {
+
 
      
-    gifs=pics.results;
-    console.log(gifs);
+    
+
     myquestion=response.results;
     for(i=0;i<10;i++){
         rand = Math.floor(Math.random() * 3);  
         myquestion[i].incorrect_answers.splice(rand,0,myquestion[i].correct_answer);
         myquestion[i].choices=myquestion[i].incorrect_answers;
-        myquestion[i].gifwin=gifs[i].url;
+       
         
         delete myquestion[i].incorrect_answers;
         
@@ -123,11 +119,11 @@ $.ajax({
         console.log(correctAnswer);
         
         bravo=$("<H1>");
-        bravoImg=$("<img>");
+        
         bravo.text("Good Answer");
         bravo.attr("class","center");
-        bravoImg.attr("src",myquestion[qnumb].gifwin);
-        $("#content").append(bravo,bravoImg);
+       
+        $("#content").append(bravo);
        
         console.log(myquestion);
         qnumb++;
@@ -139,15 +135,15 @@ $.ajax({
         
         wrongAnswer++;
         toobad=$("<H1>");
-        toobadImg=$("<img>");
+     
         correct=$("<H1>");
         toobad.text("Wrong Answer");
         
         correct.html("The correct answer is: "+myquestion[qnumb].correct_answer);
-        toobadImg.attr("src",myquestion[qnumb].giflose);
+        
         correct.attr("class","center");
         toobad.attr("class","center");
-        $("#content").append(toobad,correct,toobadImg);
+        $("#content").append(toobad,correct);
         qnumb++;
     
         setTimeout(trivia,3000);
@@ -192,4 +188,4 @@ $.ajax({
 
   });
   
-});}
+}
