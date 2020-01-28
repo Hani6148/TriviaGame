@@ -31,7 +31,7 @@ left: 273px;
     text-align: center;
     color: antiquewhite;
     opacity: 1;
-    font-size: 1.5vw;
+    font-size: 2.5vw;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
@@ -58,7 +58,7 @@ left: 273px;
 }
 
 #content{
-   width: 1450px;
+  
    margin: auto;
 
 }
