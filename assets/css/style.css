@@ -1,19 +1,22 @@
 body{
-    background-image: url(../images/nerd.jpg);
+    background: linear-gradient(181deg, #7786e2, #ff2bef);
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
 }
+
 
 .choice{
     
-    width: fit-content;
+width: fit-content;
 color: lightgoldenrodyellow;
 opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-    animation-duration: 2s;
-    color: #c0056c !important;
+animation-name: fadeInOpacity;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: 2s;
+color: #c0056c !important;
 
 background: #ffffff;
 
@@ -23,7 +26,7 @@ padding: 5px;
 
 opacity: 0.8;
 position: relative;
-left: 273px;
+left: 0;
 
 }
 
@@ -31,7 +34,7 @@ left: 273px;
     text-align: center;
     color: antiquewhite;
     opacity: 1;
-    font-size: 2.5vw;
+    font-size: 1.5rem;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
@@ -60,6 +63,7 @@ left: 273px;
 #content{
   
    margin: auto;
+   width: 80%;
 
 }
 .list{
@@ -67,23 +71,18 @@ left: 273px;
 }
 .title {
     color: mistyrose;
-    
-    width: 20vw;
-    height:30vw;
-    
+    width: fit-content;
     font-family: 'Oswald', sans-serif;
     font-size:5em;
     line-height:1;
-    margin:0;
+    margin:auto;
     padding:0;
-    
     -webkit-transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg); 
     transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg);  
-    
     position:absolute;
-    left:50%;
-    top:50px;
-    margin-left:-180px;
+    left:0;
+    right: 0;
+    top:4rem;
     text-align: center;
     -webkit-animation: anim 3s;
     -webkit-animation-timing-function: linear;
