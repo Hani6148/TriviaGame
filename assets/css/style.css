@@ -157,11 +157,12 @@ margin: auto;
 opacity: 0.8;
 }
 .total{
-    color: transparent;
+color: transparent;
 position: relative;;
-left:6%;
-top:218px;
-margin-left:-180px;
+left:0;
+right: 0;
+top:16rem;
+margin: auto;
 text-align: center;
 -webkit-animation: animation 2s;
 -webkit-animation-timing-function: linear;
